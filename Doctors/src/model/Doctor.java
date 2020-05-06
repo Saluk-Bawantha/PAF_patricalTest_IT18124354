@@ -65,7 +65,7 @@ public class Doctor {
 				return "Error while connecting to the database for reading.";
 			}
 			// Prepare the html table to be displayed
-			output = "<table border=\"1\"><tr><th>Doctor ID</th><th>  Phone </th><th> Address </th><th> Specialization </th><th> Email </th><th> Name </th><th>Update</th><th>Remove</th></tr>";
+			output = "<table border=\'1\'><tr><th>Doctor ID</th><th>  Phone </th><th> Address </th><th> Specialization </th><th> Email </th><th> Name </th><th>Update</th><th>Remove</th></tr>";
 			String query = "select * from doctors1";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(query);
@@ -79,7 +79,7 @@ public class Doctor {
 				String Name = rs.getString("Name");
 
 				// Add into the html table
-				 	output += "<tr><td><input id=\"hidItemIdUpdate\" value=\"" + DID + "\" name=\"hidItemIdUpdate\" type=\"hidden\"> "+ DID +" </td>";
+				 	output += "<tr><td><input id=\'hidItemIdUpdate\' value=\'' + DID + '\' name=\'hidItemIdUpdate\' type=\'hidden\'> "+ DID +" </td>";
 				output += "<td>" + Phone + "</td>";
 				output += "<td>" + Address + "</td>";
 				output += "<td>" + Specialization + "</td>";

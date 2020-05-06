@@ -55,7 +55,7 @@ public class DoctorAPI extends HttpServlet {
 		
 	
 	Map paras = getParasMap(request);	
-	String	 output = Aobj.updateDocDetails(paras.get("hidItemIDSave").toString(),paras.get("Phone").toString(), paras.get("Address").toString(), paras.get("Specialization").toString(),paras.get("Email").toString(),paras.get("Name").toString());
+	String	 output = Aobj.updateDocDetails(paras.get("hidItemIDSave").toString(),paras.get("Phone").toString(), paras.get("Address").toString().replace("+", " ").replace("%2C", ",").replace("%3A", ":"), paras.get("Specialization").toString().replace("+", " ").replace("%2C", ",").replace("%3A", ":"),paras.get("Email").toString().replace("+", " ").replace("%2C", ",").replace("%3A", ":"),paras.get("Name").toString().replace("+", " ").replace("%2C", ",").replace("%3A", ":"));
 	response.getWriter().write(output);
 	
 	}
